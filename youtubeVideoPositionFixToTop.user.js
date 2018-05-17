@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Youtube video fix
 // @namespace    http://widyou.net/
-// @version      0.2
+// @version      0.2.1
 // @description  Fix video to top position
 // @author       Widyou
 // @match        https://www.youtube.com/*
@@ -36,6 +36,8 @@
                 }
             } else {
                 document.getElementById('page-manager').style.marginTop = 'auto';
+                state.videoWidth = 0;
+                state.videoHeight = 0;
             }
         };
     })();
