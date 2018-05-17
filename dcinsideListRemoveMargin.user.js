@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         dc gallary list remove margin
-// @namespace    http://tampermonkey.net/
+// @namespace    http://widyou.net/
 // @version      0.1
 // @description  try to take over the world!
 // @author       Widyou

@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Youtube video fix
-// @namespace    http://tampermonkey.net/
-// @version      0.1
+// @namespace    http://widyou.net/
+// @version      0.2
 // @description  Fix video to top position
 // @author       Widyou
 // @match        https://www.youtube.com/*
