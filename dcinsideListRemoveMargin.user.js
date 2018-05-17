@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         dc gallary list remove margin
 // @namespace    http://widyou.net/
-// @version      0.1
+// @version      0.1.1
 // @description  try to take over the world!
 // @author       Widyou
 // @match        http://gall.dcinside.com/mgallery/board/lists/*
