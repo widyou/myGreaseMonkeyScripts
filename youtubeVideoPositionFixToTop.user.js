@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Youtube video fix
 // @namespace    http://widyou.net/
-// @version      0.2.1
+// @version      0.2.2
 // @description  Fix video to top position
 // @author       Widyou
 // @match        https://www.youtube.com/*
@@ -16,13 +16,13 @@
             videoWidth: 0,
             videoHeight: 0
         };
-        return function() {
+        return function(forced) {
             if (location.href.match(/^https:\/\/www\.youtube\.com\/watch\?/)) {
                 var videoComputedStyle = document.defaultView.getComputedStyle(document.querySelector('#player video'),'');
                 var videoWidth = +videoComputedStyle.width.replace(/\D+/g,'');
                 var videoHeight = +videoComputedStyle.height.replace(/\D+/g,'');
                 var nowWindowWidth = window.innerWidth;
-                if (state.videoWidth != videoWidth || state.videoHeight != videoHeight) {
+                if (forced || state.videoWidth != videoWidth || state.videoHeight != videoHeight) {
                     state.videoWidth = videoWidth;
                     state.videoHeight = videoHeight;
 
@@ -43,5 +43,10 @@
     })();
     window.addEventListener('scroll', videoPositionToFixed);
     window.addEventListener('resize', videoPositionToFixed);
-    window.addEventListener('load', videoPositionToFixed);
+    window.addEventListener('load', function() {
+        videoPositionToFixed(true);
+    });
+    window.addEventListener('popstate', function() {
+        videoPositionToFixed(true);
+    });
 })(window);
